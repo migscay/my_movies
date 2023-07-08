@@ -1,5 +1,6 @@
 import data_fetcher
 import movie_storage
+from storage_json import StorageJson
 
 
 # List movies
@@ -227,7 +228,8 @@ def execute_menu_choice(user_choice, movies):
 
 
 def main():
-    movies = movie_storage.list_movies()
+    miguel_movies = StorageJson('movies.json')
+    movies = miguel_movies.read_movies()
 
     print("********** My Movies Database **********\n")
 
