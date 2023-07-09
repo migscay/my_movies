@@ -1,3 +1,5 @@
+import sys
+
 from storage_json import StorageJson
 from storage_csv import StorageCsv
 from movie_app import MovieApp
@@ -11,7 +13,10 @@ def main():
     files are catered for
     :return:
     """
+    """
     movies_file = input("Enter the name of your movies file: ")
+    """
+    movies_file = sys.argv[1]
     miguel_movies = ""
     if os.path.isfile(movies_file):
         file, extension = os.path.splitext(movies_file)

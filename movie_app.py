@@ -1,11 +1,9 @@
 import random
 import statistics
 import data_fetcher
-import movie_storage
-from storage_json import StorageJson
 
 
-class MovieApp():
+class MovieApp:
     def __init__(self, storage):
         self._storage = storage
         self.movies = {}
@@ -173,7 +171,10 @@ class MovieApp():
         for choice in menu_items:
             print(choice)
 
-        user_choice = int(input("Enter choice (0-9): "))
+        try:
+            user_choice = int(input("Enter choice (0-9): "))
+        except ValueError:
+            pass
 
         return user_choice
 
@@ -211,6 +212,7 @@ class MovieApp():
             input("\nPress enter to continue\n")
 
 
+"""
 def main():
     miguel_movies = StorageJson('movies.json')
     movie_app = MovieApp(miguel_movies)
@@ -219,3 +221,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""

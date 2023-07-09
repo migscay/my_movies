@@ -1,6 +1,5 @@
 from istorage import IStorage
 import csv
-import data_fetcher
 
 
 class StorageCsv(IStorage):
